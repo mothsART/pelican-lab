@@ -1,7 +1,7 @@
 {% if article.tags %}
 <span class="label label-default">Tags</span>
 {% for tag in article.tags %}
-	<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+	<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}<span class="badge">{{ articles|count }}</span></a>
     {% if not loop.last %}
         /
     {% endif %}

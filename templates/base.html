@@ -63,7 +63,7 @@
 
     <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
     {% if 'tipue_search' in PLUGINS %}
-    <link href="{{ SITEURL}}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.css" rel="stylesheet">
+        <link href="{{ SITEURL}}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.css" rel="stylesheet">
     {% endif %}
     {% if DOCUTIL_CSS %}
         <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/html4css1.css" rel="stylesheet">
@@ -71,7 +71,6 @@
     {% if TYPOGRIFY %}
         <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/typogrify.css" rel="stylesheet">
     {% endif %}
-    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" type="text/css"/>
     {% if CUSTOM_CSS %}
         <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
     {% endif %}
@@ -99,8 +98,15 @@
               title="{{ SITENAME }} {{ category }} ATOM Feed"/>
     {% endif %}
 
+    {% if CSS_THEMES %}
+        {% for css_theme in CSS_THEMES %}
+            {% if css_theme.default %}
+                <link href="{{ SITEURL }}/{{ css_theme.path }}" id="selected-css" rel="stylesheet">
+            {% endif %}
+        {% endfor %}
+    {% endif %}
 </head>
-<body>
+<body class="lang-{{ DEFAULT_LANG }}">
 
 <div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top" role="navigation">
 	<div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
@@ -138,13 +144,38 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
             {% if 'tipue_search' in PLUGINS %}
-              <li><span>
-                <form class="navbar-search" action="{{ SEARCH_URL | default('/search.html') }}">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
+              <li id='tipue-search'>
+                <span>
+                    <form class="navbar-search" action="{{ SEARCH_URL | default('/search.html') }}">
+                        <span class="fa fa-search"></span>
+                        <input type="text" class="search-query" placeholder="{{ gettext('Search') }}" name="q" id="tipue_search_input" required>
+                    </form>
+                </span>
               </li>
             {% endif %}
-              <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            <li {% if 'archives' == page_name %} class="active"{% endif %}>
+                <a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a>
+            </li>
+            {% if CSS_THEMES %}
+              <li id="choose-css-theme">
+                  <div class="drodown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ gettext('CSS Themes') }}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            {% for css_theme in CSS_THEMES %}
+                                <!-- <li><a href="#">{{ css_theme.name }}</a></li> -->
+                                {% if css_theme.default %}
+                                    <li><a class="default selected" href="{{ SITEURL }}/{{ css_theme.path }}">{{ css_theme.name }}</a></li>
+                                {% else %}
+                                    <li><a href="{{ SITEURL }}/{{ css_theme.path }}">{{ css_theme.name }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+              </li>
+            {% endif %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -160,9 +191,9 @@
 <div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
     <div class="row">
         {% if not HIDE_SIDEBAR or ABOUT_ME %}
-        <div class="col-sm-9">
+            <div class="col-sm-10">
         {% else %}
-        <div class="col-lg-12">
+            <div class="col-lg-12">
         {% endif %}
         {% block breadcrumbs %}
         {% endblock %}
@@ -170,7 +201,7 @@
         {% endblock %}
         </div>
         {% if not HIDE_SIDEBAR or ABOUT_ME %}
-        <div class="col-sm-3" id="sidebar">
+        <div class="col-sm-2" id="sidebar">
             <aside>
             {% if ABOUT_ME %}
                 {% include 'includes/aboutme.html' %}
@@ -201,6 +232,11 @@
 {% include 'includes/ga.html' %}
 {% include 'includes/piwik.html' %}
 
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/theme_css.js"></script>
+
+{{ ace_editor }}
+
 {% block scripts %}{% endblock %}
+
 </body>
 </html>

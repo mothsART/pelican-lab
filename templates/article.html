@@ -72,11 +72,12 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="{{ SITEURL }}/{{ article.url }}"
+                    {# <a href="{{ SITEURL }}/{{ article.url }}"
                        rel="bookmark"
                        title="Permalink to {{ article.title|striptags }}">
                         {{ article.title }}
-                    </a>
+                    </a> #}
+                    {{ article.title }}
                 </h1>
             </header>
             <div class="entry-content">
