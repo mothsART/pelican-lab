@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-12-12 14:18+0100\n"
+"POT-Creation-Date: 2016-02-24 22:57+0100\n"
 "PO-Revision-Date: 2014-07-13 12:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -17,6 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.1.1\n"
+
+#: templates/404.html:13
+msgid "That page doesn't exist!"
+msgstr "Tu t'es perdu mon ami ?"
+
+#: templates/404.html:20
+msgid ""
+"<p>Sorry, but the page you are looking for cannot be found. It seems that"
+" the page you were trying to reach doesn't exist, or may be it has just "
+"moved, or it no longer exists.</p>\n"
+"        <p>The best thing to do is to use the search form or start again "
+"from the <a href=\"{{ SITEURL }}\">home page</a>.</p>"
+msgstr ""
+"<p>Sois rassurés: la sortie n'est pas loin : <a href=\"{{ SITEURL }}\">Accueil</a>.</p>"
+
+#: templates/404.html:24 templates/404.html:25 templates/base.html:143
+msgid "Search"
+msgstr "Rechercher"
+
+#: templates/archives.html:14
+msgid "Archives for"
+msgstr "Les archives de"
+
+#: templates/article_list.html:15
+msgid "more"
+msgstr "lire la suite"
 
 #: templates/includes/footer.html:11
 msgid "Powered by"

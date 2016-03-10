@@ -1,14 +1,14 @@
 # Translations template for PROJECT.
-# Copyright (C) 2015 ORGANIZATION
+# Copyright (C) 2016 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-12-12 14:18+0100\n"
+"POT-Creation-Date: 2016-02-24 22:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,31 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.1.1\n"
+
+#: templates/404.html:13
+msgid "That page doesn't exist!"
+msgstr ""
+
+#: templates/404.html:20
+msgid ""
+"<p>Sorry, but the page you are looking for cannot be found. It seems that"
+" the page you were trying to reach doesn't exist, or may be it has just "
+"moved, or it no longer exists.</p>\n"
+"        <p>The best thing to do is to use the search form or start again "
+"from the <a href=\"{{ SITEURL }}\">home page</a>.</p>"
+msgstr ""
+
+#: templates/404.html:24 templates/404.html:25 templates/base.html:143
+msgid "Search"
+msgstr ""
+
+#: templates/archives.html:14
+msgid "Archives for"
+msgstr ""
+
+#: templates/article_list.html:15
+msgid "more"
+msgstr ""
 
 #: templates/includes/footer.html:11
 msgid "Powered by"
