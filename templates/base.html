@@ -156,7 +156,7 @@
             <li {% if 'archives' == page_name %} class="active"{% endif %}>
                 <a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a>
             </li>
-            {% if CSS_THEMES %}
+            {% if CSS_THEMES and CSS_THEMES|length > 1 %}
               <li id="choose-css-theme">
                   <div class="drodown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
