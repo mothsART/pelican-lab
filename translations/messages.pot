@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-02-24 22:57+0100\n"
+"POT-Creation-Date: 2016-03-11 19:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.1.1\n"
 
-#: templates/404.html:13
+#: templates/404.html:16
 msgid "That page doesn't exist!"
 msgstr ""
 
-#: templates/404.html:20
+#: templates/404.html:22
 msgid ""
-"<p>Sorry, but the page you are looking for cannot be found. It seems that"
-" the page you were trying to reach doesn't exist, or may be it has just "
-"moved, or it no longer exists.</p>\n"
-"        <p>The best thing to do is to use the search form or start again "
-"from the <a href=\"{{ SITEURL }}\">home page</a>.</p>"
+"\n"
+"                    <p>\n"
+"                        Sorry, but the page you are looking for cannot be"
+" found. It seems that the page you were trying to reach does'nt exist, or"
+" may be it has just moved, or it no longer exists.\n"
+"                    </p>\n"
+"                    <p>\n"
+"                        The best thing to do is to use the search form or"
+" start again from the\n"
+"                            <a href=\"{{ SITEURL }}\" >\n"
+"                            home page\n"
+"                        </a>.\n"
+"                    </p>\n"
+"                "
 msgstr ""
 
-#: templates/404.html:24 templates/404.html:25 templates/base.html:143
+#: templates/404.html:36 templates/404.html:38 templates/base.html:151
 msgid "Search"
 msgstr ""
 
@@ -38,15 +47,19 @@ msgstr ""
 msgid "Archives for"
 msgstr ""
 
-#: templates/article_list.html:15
+#: templates/article_list.html:16
 msgid "more"
 msgstr ""
 
-#: templates/includes/footer.html:11
+#: templates/base.html:163
+msgid "CSS Themes"
+msgstr ""
+
+#: templates/includes/footer.html:12
 msgid "Powered by"
 msgstr ""
 
-#: templates/includes/footer.html:22
+#: templates/includes/footer.html:26
 msgid "Back to top"
 msgstr ""
 
