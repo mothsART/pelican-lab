@@ -365,16 +365,6 @@ a, a:hover, a:focus {
     color: inherit;
 }
 
-.entry-content a {
-    text-decoration: none;
-    border-bottom: 1px dotted;
-}
-
-.entry-content a:hover {
-    text-decoration: none;
-    border-bottom: 1px solid;
-}
-
 .entry-content img {
     max-width: 100%;
     height: auto;
@@ -515,7 +505,10 @@ kbd {
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 #bbb;
 }
-
+/* Ace Editor Plugin */
+.ace_editor {
+    margin: 0 0 0 30px;
+}
 /* Tipue search Plugin */
 
 .navbar-default .navbar-nav > li#tipue-search {
@@ -604,6 +597,15 @@ kbd {
     padding: 10px;
 }
 
+#content a {
+    text-decoration: underline;
+    transition: all .5s ease-in-out;
+}
+
+#content a:hover, #content a:focus {
+    color: #C8751C;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: Montserrat, sans-serif;
     text-transform: uppercase;
@@ -690,7 +692,6 @@ h6 {
 
 article {
     background: #F79E02;
-    border-bottom: #DA862D solid 6px;
     padding: 5px;
     margin-bottom: 15px;
 }
