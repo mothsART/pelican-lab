@@ -101,7 +101,7 @@
     {% if CSS_THEMES %}
         {% for css_theme in CSS_THEMES %}
             {% if css_theme.default %}
-                <link href="{{ SITEURL }}/{{ css_theme.path }}" id="selected-css" rel="stylesheet">
+                <link href="{{ SITEURL }}/{{ css_theme.path }}" id="selected-css" rel="stylesheet" />
             {% endif %}
         {% endfor %}
     {% endif %}
@@ -147,8 +147,8 @@
               <li id='tipue-search'>
                 <span>
                     <form class="navbar-search" action="{{ SEARCH_URL | default('/search.html') }}">
-                        <span class="fa fa-search"></span>
                         <input type="text" class="search-query" placeholder="{{ gettext('Search') }}" name="q" id="tipue_search_input" required>
+                        <span class="fa fa-search"></span>
                     </form>
                 </span>
               </li>
@@ -167,9 +167,17 @@
                             {% for css_theme in CSS_THEMES %}
                                 <!-- <li><a href="#">{{ css_theme.name }}</a></li> -->
                                 {% if css_theme.default %}
-                                    <li><a class="default selected" href="{{ SITEURL }}/{{ css_theme.path }}">{{ css_theme.name }}</a></li>
+                                    <li class="selected">
+                                        <a href="{{ SITEURL }}/{{ css_theme.path }}">
+                                            <span>{{ css_theme.name }}</span>
+                                        </a>
+                                    </li>
                                 {% else %}
-                                    <li><a href="{{ SITEURL }}/{{ css_theme.path }}">{{ css_theme.name }}</a></li>
+                                    <li>
+                                        <a href="{{ SITEURL }}/{{ css_theme.path }}">
+                                            <span>{{ css_theme.name }}</span>
+                                        </a>
+                                    </li>
                                 {% endif %}
                             {% endfor %}
                         </ul>

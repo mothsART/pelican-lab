@@ -15,6 +15,22 @@
     color: white;
 }
 
+::-webkit-input-placeholder {
+   color: #F79E02;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #F79E02;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #F79E02;
+}
+
+:-ms-input-placeholder {
+   color: #F79E02;
+}
+
 body {
     padding-top: 70px;
     color: #6B6969;
@@ -157,12 +173,47 @@ body.lang-fr h1 strong:after {
 }
 
 #choose-css-theme .dropdown-menu li a {
-    padding: 5px;
+    position: relative;
+    padding: 0;
     color: white;
     height: 32px;
+    transition: all .5s ease-in-out;
 }
 
-#choose-css-theme .dropdown-menu li a.selected:before {
+#choose-css-theme .dropdown-menu li a:hover,
+#choose-css-theme .dropdown-menu li a:focus {
+    background: #DA862D;
+    color: #DA862D;
+}
+
+#choose-css-theme .dropdown-menu li a:before {
+    content: "";
+    height: 32px;
+    width: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: #DA862D;
+    transition: all .5s ease-in-out;
+}
+
+#choose-css-theme .dropdown-menu li a:hover:before {
+    background: white;
+    color: #DA862D;
+    width: 100%;
+}
+
+#choose-css-theme .dropdown-menu li a span {
+    display: block;
+    padding: 5px;
+    color: white;
+}
+#choose-css-theme .dropdown-menu li a:hover span {
+    position: inherit;
+    color: #DA862D;
+}
+
+#choose-css-theme .dropdown-menu li.selected a span:before {
     font-family: 'Glyphicons Halflings';
     content: "\e013";
     width: 16px;
@@ -177,16 +228,11 @@ body.lang-fr h1 strong:after {
     margin-right: 4px;
 }
 
-#choose-css-theme .dropdown-menu li a.selected:hover:before {
+#choose-css-theme .dropdown-menu li.selected a span:hover:before {
     background: #DA862D;
     color: white;
 }
 
-#choose-css-theme .dropdown-menu li a:hover,
-#choose-css-theme .dropdown-menu li a:focus {
-    background: white;
-    color: #DA862D;
-}
 /* END CSS Theme dropdown */
 /* END menu */
 
@@ -524,7 +570,24 @@ kbd {
     margin-top: 8px;
 }
 
+#tipue_search_input {
+    float: left;
+    display: inline-block;
+    font-family: Montserrat, sans-serif;
+    background: white;
+    color: #DA862D;
+    height: 35px;
+    width: 140px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    padding: 5px;
+    background-position-y: 8px;
+    border: none;
+    border-bottom: rgba(248, 172, 89, 0.8) solid 1px;
+}
+
 .navbar-default .navbar-nav > li#tipue-search .fa.fa-search {
+    float left;
     height: 34px;
     width: 34px;
     background: #DA862D;
@@ -533,17 +596,6 @@ kbd {
     border: solid 1px white;
 }
 
-#tipue_search_input {
-    display: none;
-    font-family: Montserrat, sans-serif;
-    text-transform: uppercase;
-    margin-top: 10px;
-    padding: 5px;
-    padding-left: 40px;
-    background-position-y: 8px;
-    border: none;
-    border-bottom: rgba(248, 172, 89, 0.8) solid 1px;
-}
 /* Ace Editor Plugin */
 .ace-chrome .ace_marker-layer .ace_selection {
     background: #F79E02;
