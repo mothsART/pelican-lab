@@ -31,15 +31,18 @@ Page does not exist at {{ SITENAME|striptags|e }} blog.
                     </p>
                 ') }}
 
-                <form action="{{ SITEURL }}/search.html" onsubmit="return validateForm(this.elements['q'].value)">
+                {% if 'tipue_search' in PLUGINS %}
                     <p>
-                        <input type="text" class="span12" placeholder="{{ gettext('Search') }}" name="q" id="tipue_search_input_404" />
-                        <button class="btn" type="submit">
-                            {{ gettext('Search') }}
-                        </button>
+                        {{ gettext('You can also use the search engine :') }}
                     </p>
-                </form>
-            </div>
+                    <div class='tipue-search'>
+                        <form class="navbar-search" action="{{ SEARCH_URL | default('/search.html') }}">
+                            <input type="text" class="search-query" placeholder="{{ gettext('Search') }}" name="q" id="tipue_search_input" required>
+                            <input type="submit" value="&#xe003;" />
+                        </form>
+                    </div>
+                {% endif %}
+             </div>
         </div>
     </article>
 </section>

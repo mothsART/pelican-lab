@@ -38,7 +38,11 @@ msgid ""
 "                        </a>.\n"
 "                    </p>\n"
 "                "
-msgstr "<p>Sois rassurés: la sortie n'est pas loin : tu peux soit <a href=\"{{ SITEURL }}\">retourner à l'Accueil</a> soit effectuer une recherche :</p>"
+msgstr "<p>Sois rassurés: la sortie n'est pas loin : tu peux <a href=\"{{ SITEURL }}\">retourner à l'Accueil</a>.</p>"
+
+#: templates/404.html:35
+msgid "You can also use the search engine :"
+msgstr "Le moteur de recherche est également à ta disposition :"
 
 #: templates/404.html:24 templates/404.html:25 templates/base.html:143
 msgid "Search"
