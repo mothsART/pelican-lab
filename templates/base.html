@@ -144,11 +144,11 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
             {% if 'tipue_search' in PLUGINS %}
-              <li id='tipue-search'>
+              <li class='tipue-search'>
                 <span>
                     <form class="navbar-search" action="{{ SEARCH_URL | default('/search.html') }}">
                         <input type="text" class="search-query" placeholder="{{ gettext('Search') }}" name="q" id="tipue_search_input" required>
-                        <span class="fa fa-search"></span>
+                        <input type="submit" value="&#xe003;" />
                     </form>
                 </span>
               </li>
