@@ -235,7 +235,7 @@ http://www.tipue.com/search
 
                                    if (score < 1000000000)
                                    {
-                                        found[c++] = score + '^' + tipuesearch_in.pages[i].title + '^' + s_t + '^' + tipuesearch_in.pages[i].loc;
+                                        found[c++] = score + '^' + tipuesearch_in.pages[i].title + '^' + s_t + '^' + tipuesearch_in.pages[i].url;
                                    }
                               }
                          }
@@ -274,7 +274,7 @@ http://www.tipue.com/search
 
                                    if (score < 1000000000)
                                    {
-                                        found[c++] = score + '^' + tipuesearch_in.pages[i].title + '^' + s_t + '^' + tipuesearch_in.pages[i].loc;
+                                        found[c++] = score + '^' + tipuesearch_in.pages[i].title + '^' + s_t + '^' + tipuesearch_in.pages[i].url;
                                    }
                               }
                          }
@@ -288,12 +288,12 @@ http://www.tipue.com/search
                               }
                               if (c == 1)
                               {
-                                   out += '<div id="tipue_search_results_count">1 result</div>';
+                                   out += '<h1 id="tipue_search_results_count">1 result</h1>';
                               }
                               else
                               {
                                    c_c = c.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                                   out += '<div id="tipue_search_results_count">' + c_c + ' results</div>';
+                                   out += '<h1 id="tipue_search_results_count">' + c_c + ' results</h1>';
                               }
 
                               found.sort();
@@ -303,11 +303,19 @@ http://www.tipue.com/search
                                    var fo = found[i].split('^');
                                    if (l_o >= start && l_o < set.show + start)
                                    {
-                                        out += '<div class="tipue_search_content_title"><a href="' + fo[3] + '"' + tipue_search_w + '>' +  fo[1] + '</a></div>';
-
+                                        out += "<article>";
+                                        if (fo[1]) {
+                                             out += '<h3 class="tipue_search_content_title"><a href="' + fo[3] + '"' + tipue_search_w + '>' +  fo[1] + '</a></h3>';
+                                        }
                                         if (set.showURL)
                                         {
-                                             out += '<div class="tipue_search_content_url"><a href="' + fo[3] + '"' + tipue_search_w + '>' + fo[3] + '</a></div>';
+                                             out += '<div class="summary">
+                                                  <a class="btn btn-default btn-xs" href="' + fo[3] + '"' + tipue_search_w + '">
+                                                      <span class="fa fa-chevron-circle-right">
+                                                          lire la suite ...
+                                                      </span>
+                                                  </a>
+                                             </div>';
                                         }
 
                                         var t = fo[2];
@@ -329,7 +337,7 @@ http://www.tipue.com/search
                                         {
                                              t_d += ' ...';
                                         }
-                                        out += '<div class="tipue_search_content_text">' + t_d + '</div>';
+                                        out += '<div class="tipue_search_content_text">' + t_d + '</div></article>';
                                    }
                                    l_o++;
                               }
