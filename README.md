@@ -2,12 +2,31 @@
 
 This theme is inspired by (pelican-bootstrap3)[https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3] but extend.
 
+# Require
+
+using the **(i18n_subsites)[https://github.com/getpelican/pelican-plugins/tree/master/i18n_subsites]** plugin.
+
+# Settings
+
+To add css theme (on your pelicanconf.py) :
+
+    #!bash
+    CSS_THEMES = [
+        {
+            "name": "Thème classique (orange)",
+            "path": "theme/css/orange.css",
+            "default": True
+        },
+        {
+            "name": "Thème océan (bleu)",
+            "path": "theme/css/ocean.css"
+        }
+    ]
 
 # Task List
 
 ## 0.1
 
-- 
 - [x] supporting change CSS theme with a dropdown :
     - [x] 2 differents styles purpose : orange and blue
     - [x] style keep with a cookie and apply with javascript
@@ -26,4 +45,3 @@ This theme is inspired by (pelican-bootstrap3)[https://github.com/getpelican/pel
 ## 1.0
 
 - test on multi-browsers
-- 
