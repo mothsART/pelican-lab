@@ -6,6 +6,10 @@ This theme is inspired by (pelican-bootstrap3)[https://github.com/getpelican/pel
 
 using the **(i18n_subsites)[https://github.com/getpelican/pelican-plugins/tree/master/i18n_subsites]** plugin.
 
+#Example
+
+You can see **(my website)[https://mothsart.github.io/]**
+
 # Settings
 
 To add css theme (on your pelicanconf.py) :
@@ -13,12 +17,12 @@ To add css theme (on your pelicanconf.py) :
     #!bash
     CSS_THEMES = [
         {
-            "name": "Thème classique (orange)",
+            "name": "Classic theme (orange)",
             "path": "theme/css/orange.css",
             "default": True
         },
         {
-            "name": "Thème océan (bleu)",
+            "name": "Ocean theme (bleu)",
             "path": "theme/css/ocean.css"
         }
     ]
