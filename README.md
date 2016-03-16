@@ -1,14 +1,14 @@
 # Intro
 
-This theme is inspired by (pelican-bootstrap3)[https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3] but extend.
+This theme is inspired by [pelican-bootstrap3](https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3) but extend.
 
 # Require
 
-using the **(i18n_subsites)[https://github.com/getpelican/pelican-plugins/tree/master/i18n_subsites]** plugin.
+using the **[i18n_subsites](https://github.com/getpelican/pelican-plugins/tree/master/i18n_subsites)** plugin.
 
 #Example
 
-You can see **(my website)[https://mothsart.github.io/]**
+You can see **[my website](https://mothsart.github.io/)**
 
 # Settings
 
