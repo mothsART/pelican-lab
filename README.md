@@ -6,7 +6,7 @@ This theme is inspired by [pelican-bootstrap3](https://github.com/getpelican/pel
 
 using the **[i18n_subsites](https://github.com/getpelican/pelican-plugins/tree/master/i18n_subsites)** plugin.
 
-#Example
+# Example
 
 You can see **[my website](https://mothsart.github.io/)**
 
@@ -37,15 +37,23 @@ To add css theme (on your pelicanconf.py) :
 
 ## 0.2
 
-- [ ] doc
+- [x] doc
 - Plugin integration
     - [x] tipue_search
     - [x] tag_cloud
     - [ ] 
 - [ ] I18n on all page and all supported plugin :
-    - [ ] 404 page
-    - [ ] tipue_search
+    - [x] 404 page
+    - [ ] tipue_search : results, next, prev
 
 ## 1.0
 
 - test on multi-browsers
+
+# Bugs
+
+- global design :
+    - [ ] gradient on menu
+
+- tipue_search :
+    - [ ] css decoration on pagination
