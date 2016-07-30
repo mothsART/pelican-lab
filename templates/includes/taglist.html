@@ -11,9 +11,10 @@
 	<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}
         {% for t in tags %}
             {% if t.0.url == tag.url %}
-                <span class="badge">{{ t.2 }}</span></a>
+                <span class="badge">{{ t.2 }}</span>
             {% endif %}
         {% endfor %}
+    </a>
     {% if not loop.last %}
         /
     {% endif %}
