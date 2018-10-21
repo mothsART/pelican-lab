@@ -46,6 +46,12 @@ To add css theme (on your pelicanconf.py) :
     - [x] 404 page
     - [ ] tipue_search : results, next, prev
 
+## 0.3
+
+- summarize on big article (auto-summarize ?)
+- pictures plugin
+- http://wrapbootstrap.com/preview/WB0R5L90S theme
+
 ## 1.0
 
 - test on multi-browsers
